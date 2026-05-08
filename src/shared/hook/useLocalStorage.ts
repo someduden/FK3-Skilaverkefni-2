@@ -1,5 +1,5 @@
 import { useEffect, useState, type Dispatch, type SetStateAction } from 'react';
-import { readJson, writeJson } from '@/shared/localStorage/jsonLocalStorage';
+import { readJson, writeJson } from '../localStorage/jsonLocalStorage';
 
 export function useLocalStorage<T>(
   key: string,
