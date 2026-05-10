@@ -23,5 +23,17 @@ jobs:
       - name: Install dependancies
         run: npm install
 
+      - name: Install Playwright
+        run: npx playwright install
+
       - name: Run unit tests (Vitest)
         run: npm run test
+
+      - name: Start app
+        run: npm run dev &
+
+      - name: Wait for app
+        run: npx wait-on http://localhost:5173
+
+      - name: Run Cypress
+        run: npm run cypress:run
