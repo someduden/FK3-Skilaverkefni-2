@@ -64,7 +64,11 @@ export function createTaskTableColumns(
         );
       },
       sortingFn: sortPriority,
-      cell: ({ row }) => <span>{priorityLabel[row.original.priority]}</span>,
+      cell: ({ row }) => (
+        <span data-testid="task-title">
+          {priorityLabel[row.original.priority]}
+        </span>
+      ),
     },
     {
       accessorKey: 'completed',
@@ -74,6 +78,7 @@ export function createTaskTableColumns(
         <div className="text-center">
           <Checkbox
             checked={row.original.completed}
+            data-testid="task-checkbox-btn"
             onCheckedChange={() =>
               onToggleTaskCompleted(row.original.id, !row.original.completed)
             }

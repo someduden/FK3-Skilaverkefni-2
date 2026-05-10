@@ -6,6 +6,7 @@ function AddTask({ onOpen }: { onOpen: () => void }) {
   const { activeProject } = useGlobalContext();
   return (
     <Button
+      data-testid="add-task-btn"
       variant="ghost"
       className="h-9 w-fit gap-1.5 px-2"
       disabled={!activeProject}

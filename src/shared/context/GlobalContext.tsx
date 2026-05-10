@@ -5,7 +5,13 @@ import { GlobalContext, type GlobalContextValue } from './globalContextTypes';
 import { globalReducer, initialState } from './globalReducer';
 import type { Project } from '@/feature/project/list/model/project';
 
-export function GlobalProvider({ children }: { children: ReactNode }) {
+export function GlobalProvider({
+  children,
+  overrideValue,
+}: {
+  children: ReactNode;
+  overrideValue?: Partial<GlobalContextValue>;
+}) {
   const [state, dispatch] = useReducer(
     globalReducer,
     initialState,
@@ -64,6 +70,8 @@ export function GlobalProvider({ children }: { children: ReactNode }) {
     addProject,
     setActiveProject,
     clearActiveProject,
+
+    ...overrideValue,
   };
 
   return (

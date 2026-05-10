@@ -90,6 +90,7 @@ function TaskForm({
           </label>
           <Input
             id="title"
+            data-testid="task-input"
             name="title"
             type="text"
             placeholder="e.g. Website redesign"
@@ -106,6 +107,7 @@ function TaskForm({
           </label>
           <Input
             id="description"
+            data-testid="task-description-input"
             name="description"
             type="text"
             placeholder="Short summary"
@@ -141,7 +143,11 @@ function TaskForm({
             Cancel
           </Button>
         </DialogClose>
-        <Button type="submit" disabled={!activeProject}>
+        <Button
+          type="submit"
+          data-testid="submit-task-btn"
+          disabled={!activeProject}
+        >
           {isEditing ? 'Save changes' : 'Add task'}
         </Button>
       </DialogFooter>

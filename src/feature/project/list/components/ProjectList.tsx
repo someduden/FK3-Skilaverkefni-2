@@ -46,7 +46,10 @@ function ProjectList() {
                     <ProjectCard key={project.id} project={project} />
                   ))
                 ) : (
-                  <p className="text-center text-muted-foreground">
+                  <p
+                    className="text-center text-muted-foreground"
+                    data-testid="empty-projects"
+                  >
                     Add a project to get started
                   </p>
                 )}

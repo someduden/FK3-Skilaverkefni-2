@@ -4,7 +4,9 @@ import { DialogTrigger } from '@/shared/components/ui/dialog';
 function AddProject() {
   return (
     <DialogTrigger asChild>
-      <Button type="button">Add project</Button>
+      <Button type="button" data-testid="add-project-btn">
+        Add project
+      </Button>
     </DialogTrigger>
   );
 }

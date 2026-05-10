@@ -39,6 +39,9 @@ export function TaskDataTable({ table, columnCount }: TaskDataTableProps) {
             table.getRowModel().rows.map((row) => (
               <TableRow
                 key={row.id}
+                data-testid={`task-row-test`}
+                data-completed={row.original.completed}
+                className={row.original.completed ? 'completed' : ''}
                 data-state={row.getIsSelected() && 'selected'}
               >
                 {row.getVisibleCells().map((cell) => (
@@ -51,7 +54,7 @@ export function TaskDataTable({ table, columnCount }: TaskDataTableProps) {
           ) : (
             <TableRow>
               <TableCell colSpan={columnCount} className="h-24 text-center">
-                No results.
+                <span data-testid="empty-tasks">No results.</span>
               </TableCell>
             </TableRow>
           )}

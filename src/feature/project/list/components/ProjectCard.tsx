@@ -8,13 +8,18 @@ function ProjectCard({ project }: { project: Project }) {
   const { removeProject, setActiveProject } = useGlobalContext();
   return (
     <Card
+      data-testid={`project-card-${project.id}`}
       className="flex flex-row justify-between hover:bg-accent cursor-pointer w-full"
       onClick={() => {
         setActiveProject(project);
       }}
     >
       <CardContent>
-        <h3 className="text-lg font-semibold" key={project.id}>
+        <h3
+          className="text-lg font-semibold"
+          key={project.id}
+          data-testid="project-name"
+        >
           {project.name}
         </h3>
         <p className="text-sm text-muted-foreground" key={project.id}>
@@ -26,6 +31,7 @@ function ProjectCard({ project }: { project: Project }) {
       </CardContent>
       <CardFooter className="flex justify-end">
         <Button
+          data-testid={`delete-project-${project.id}`}
           type="button"
           variant="ghost"
           size="icon"

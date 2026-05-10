@@ -48,6 +48,7 @@ function ProjectForm({ onClose }: { onClose: () => void }) {
           </label>
           <Input
             id={nameId}
+            data-testid="project-name-input"
             name="name"
             type="text"
             placeholder="e.g. Website redesign"
@@ -64,6 +65,7 @@ function ProjectForm({ onClose }: { onClose: () => void }) {
           </label>
           <Input
             id={descriptionId}
+            data-testid="project-description-input"
             name="description"
             type="text"
             placeholder="Short summary"
@@ -79,7 +81,9 @@ function ProjectForm({ onClose }: { onClose: () => void }) {
             Cancel
           </Button>
         </DialogClose>
-        <Button type="submit">Add project</Button>
+        <Button type="submit" data-testid="submit-project-btn">
+          Add project
+        </Button>
       </DialogFooter>
     </form>
   );
