@@ -46,6 +46,8 @@ export const Large: Story = {
   },
 };
 
+// I LOVE BUTTONS
+
 export const Small: Story = {
   args: {
     size: 'small',
@@ -56,6 +58,6 @@ export const Small: Story = {
 export const Chart: Story = {
   args: {
     primary: false,
-    label: "Button"
-  }
+    label: 'Button',
+  },
 };
