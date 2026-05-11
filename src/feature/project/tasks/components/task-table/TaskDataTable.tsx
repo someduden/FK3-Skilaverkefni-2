@@ -39,7 +39,7 @@ export function TaskDataTable({ table, columnCount }: TaskDataTableProps) {
             table.getRowModel().rows.map((row) => (
               <TableRow
                 key={row.id}
-                data-testid={`task-row-test`}
+                data-testid={`task-row-${row.original.id}`}
                 data-completed={row.original.completed}
                 className={row.original.completed ? 'completed' : ''}
                 data-state={row.getIsSelected() && 'selected'}

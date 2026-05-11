@@ -14,14 +14,15 @@ describe('Task flow', () => {
     cy.get('[data-testid="task-description-input"]').type('Test');
     cy.get('[data-testid="submit-task-btn"]').click();
 
-    cy.contains('My first task').should('exist');
+    cy.get('[data-testid="task-title"]').should('contain', 'My first task');
 
-    cy.get('[data-testid="task-checkbox-btn"]').click();
+    cy.get('[data-testid^="task-row-"]')
+      .contains('My first task')
+      .closest('[data-testid^="task-row-"]')
+      .as('taskRow');
 
-    cy.get('[data-testid="task-row-test"]').should(
-      'have.attr',
-      'data-completed',
-      'true',
-    );
+    cy.get('@taskRow').find('[data-testid="task-checkbox-btn"]').click();
+
+    cy.get('@taskRow').should('have.attr', 'data-completed', 'true');
   });
 });

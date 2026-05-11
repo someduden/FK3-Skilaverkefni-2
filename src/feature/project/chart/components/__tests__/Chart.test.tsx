@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import { ProjectTasksChart } from './Chart';
+import { ProjectTasksChart } from '../Chart';
 import { GlobalProvider } from '@/shared/context';
 import type { Task } from '@/feature/project/tasks/model/task';
 

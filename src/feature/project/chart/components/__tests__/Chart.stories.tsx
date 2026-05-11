@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { ProjectTasksChart } from './Chart';
+import { ProjectTasksChart } from '../Chart';
 import { GlobalProvider } from '@/shared/context';
-import type { Task } from '../../tasks/model/task';
+import type { Task } from '../../../tasks/model/task';
 
 const meta = {
   component: ProjectTasksChart,

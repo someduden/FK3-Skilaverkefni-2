@@ -35,6 +35,9 @@ export function createTaskTableColumns(
       accessorKey: 'title',
       header: 'Title',
       enableSorting: false,
+      cell: ({ row }) => (
+        <span data-testid="task-title">{row.original.title}</span>
+      ),
     },
     {
       accessorKey: 'description',
@@ -64,11 +67,7 @@ export function createTaskTableColumns(
         );
       },
       sortingFn: sortPriority,
-      cell: ({ row }) => (
-        <span data-testid="task-title">
-          {priorityLabel[row.original.priority]}
-        </span>
-      ),
+      cell: ({ row }) => <span>{priorityLabel[row.original.priority]}</span>,
     },
     {
       accessorKey: 'completed',
