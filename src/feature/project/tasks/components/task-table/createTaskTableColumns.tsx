@@ -32,6 +32,7 @@ export function createTaskTableColumns(
 ): ColumnDef<Task>[] {
   return [
     {
+      id: 'title',
       accessorKey: 'title',
       header: 'Title',
       enableSorting: false,
@@ -40,13 +41,14 @@ export function createTaskTableColumns(
       ),
     },
     {
+      id: 'description',
       accessorKey: 'description',
       header: 'Description',
       enableSorting: false,
     },
     {
-      accessorKey: 'priority',
       id: 'priority',
+      accessorKey: 'priority',
       header: ({ column }) => {
         return (
           <Button
@@ -70,6 +72,7 @@ export function createTaskTableColumns(
       cell: ({ row }) => <span>{priorityLabel[row.original.priority]}</span>,
     },
     {
+      id: 'completed',
       accessorKey: 'completed',
       header: 'Completed',
       enableSorting: false,

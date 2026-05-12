@@ -5,6 +5,7 @@ import { GlobalProvider } from '@/shared/context';
 import type { Task } from '../../../tasks/model/task';
 
 const meta = {
+  title: 'Features/Project/Chart/Chart',
   component: ProjectTasksChart,
 } satisfies Meta<typeof ProjectTasksChart>;
 

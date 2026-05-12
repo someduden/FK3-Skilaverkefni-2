@@ -5,6 +5,7 @@ import type { Project } from '../../model/project';
 import { GlobalProvider } from '@/shared/context';
 
 const meta = {
+  title: 'Features/Projects/ProjectList',
   component: ProjectList,
 } satisfies Meta<typeof ProjectList>;
 

@@ -6,6 +6,7 @@ import type { Task } from '../../model/task';
 import type { Project } from '@/feature/project/list/model/project';
 
 const meta = {
+  title: 'Features/Project/Tasks/Tasks',
   component: Tasks,
 } satisfies Meta<typeof Tasks>;
 
